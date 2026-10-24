@@ -1,5 +1,7 @@
 import "package:dart_learning/grade_calculator.dart";
 
+import 'dart:io';
+
 void main() {
   /*String studentName1 = 'Shuku';
   int score1 = 90;
@@ -14,7 +16,9 @@ void main() {
 
   print('Student Name: $studentName2');
   print('Student Score: $score2');
-  print('Student Grade: ${calculateGrade(score2)}');*/
+  print('Student Grade: ${calculateGrade(score2)}');
+
+  ......................................... list and loop
   List<String> students = [
     'Fatima',
     'Zahra',
@@ -30,5 +34,17 @@ void main() {
     print('Student Score: ${scores[i]}');
     print('Student Grade: ${calculateGrade(scores[i])}');
     print("-------------------");
-  }
+  }*/
+  stdout.write('Enter student name: ');
+  String studentName = stdin.readLineSync() ?? '';
+
+  stdout.write('Enter student Score:');
+  int score = int.tryParse(stdin.readLineSync() ?? '') ?? -1;
+
+  String grade = calculateGrade(score);
+
+  print('\nStudent Name: $studentName');
+  print('Score: $score');
+  print('Grade: $grade');
+  print('----------------------');
 }
